@@ -8,6 +8,17 @@ namespace CTest
 {
     public class CTest
     {
+        private int div;
+        private int calcul(int val)
+        { 
+            div = val; 
+            if(div!=0)
+            {
+                Thread.Sleep(1);
+                return (100 / div);
+            }
+            return 0;
+        }
         public void AfficheB()
         {
             for (int i = 1; i <= 50; i++)
@@ -22,6 +33,7 @@ namespace CTest
             for (int i = 1; i <= 100; i++)
             {
                 Console.WriteLine("AfficheC thread : " + Thread.CurrentThread.Name + " iteration " + i);
+                Console.WriteLine(calcul(i - 1));
                 Thread.Sleep(1000);
             }
         }
