@@ -32,9 +32,13 @@ namespace CTest
         {
             for (int i = 1; i <= 100; i++)
             {
-                Console.WriteLine("AfficheC thread : " + Thread.CurrentThread.Name + " iteration " + i);
-                Console.WriteLine(calcul(i - 1));
-                Thread.Sleep(1000);
+                lock (this)
+                {
+                    div = 0;
+                    Console.WriteLine("AfficheC thread : " + Thread.CurrentThread.Name + " iteration " + i);
+                    Console.WriteLine(calcul(i));
+                    Thread.Sleep(1000);
+                }
             }
         }
     }
