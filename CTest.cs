@@ -10,9 +10,9 @@ namespace CTest
     {
         public void AfficheB()
         {
-            while (true)
+            for (int i = 1; i <= 50; i++)
             {
-                Console.WriteLine("AfficheB thread : " + Thread.CurrentThread.Name);
+                Console.WriteLine("AfficheB thread : " + Thread.CurrentThread.Name + " iteration " + i);
                 Thread.Sleep(1000);
             }
         }

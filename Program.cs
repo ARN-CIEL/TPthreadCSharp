@@ -35,6 +35,10 @@ class Program
         //thread2_fonction.Start();
         //thread3_fonction.Start();
         thread4_fonction2.Start();
+        thread4_fonction2.Join();
         thread5_fonction3.Start();
+        thread5_fonction3.Join();
+        Console.WriteLine("Tous les thread sont passé");
+
     }
 }
